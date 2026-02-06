@@ -1133,6 +1133,8 @@ footer i {
 }
 
 @media (max-width: 768px) {
+
+
     .nav-links {
         display: none;
     }
@@ -1217,19 +1219,48 @@ footer i {
     .letter-card-inner {
         flex-direction: column;
     }
-    
+	
+	.letter-card-inner{
+    flex-direction: column;
+}
+
+.letter-page{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+.letter-page.left{
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.letter-page.right{
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
     .letter-page {
-        flex: 0 0 100%;
-        max-width: 100%;
-        height: 50%;
-        font-size: clamp(18px, 4vw, 22px);
-        padding: 20px;
-        overflow-y: auto;
+        flex: 1 1 auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        overflow-y: visible !important;
+        transform: none !important;
+        font-size: clamp(18px, 4.5vw, 22px);
     }
-    
+
     .letter-page.left {
-        border-right: none;
-        border-bottom: 1px solid rgba(0,0,0,.1);
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .letter-card {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
     
     .modal-header {
@@ -1331,6 +1362,130 @@ footer i {
         display: none;
     }
 }
+
+@media (max-width: 768px){
+
+    .letter-section{
+        justify-content: flex-start;
+        min-height: auto;
+    }
+
+    .letter-instruction{
+        margin-bottom: 20px !important;
+    }
+
+    .letter-scene{
+        margin-bottom: 30px !important;
+    }
+
+    .letter-card{
+        overflow: hidden;
+    }
+
+    .letter-card-inner{
+        border-radius: 20px;
+    }
+
+}
+
+
+/* Sağ sayfa bazen dönmüyor – yazı kaybolma fix */
+.letter-scene.open .letter-page.right{
+    transform: rotateY(0deg) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px){
+
+    /* Sahne mantığını kapat */
+    .letter-scene{
+        perspective: none;
+        height: auto;
+    }
+
+    /* Zarfı tamamen gizle */
+.letter-scene.open .letter-envelope{
+    display: none !important;
+}
+
+
+    /* Kart artık absolute değil – normal sayfa gibi aksın */
+    .letter-card{
+        position: static !important;
+       transform: translateY(40px) scale(.96) !important;
+        opacity: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        margin: 0 auto !important;
+        box-shadow: var(--shadow);
+    }
+	
+	    .letter-scene.open .letter-card{
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        transition: transform .6s ease, opacity .4s ease;
+    }
+
+    /* İç yapı normal kolon */
+    .letter-card-inner{
+        flex-direction: column !important;
+    }
+
+    /* Sayfalar normal blok gibi */
+    .letter-page{
+        transform: none !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        overflow: visible !important;
+        background: none !important;
+    }
+
+    .letter-page.left,
+    .letter-page.right{
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 768px){
+
+    /* Sahne kutusunun sabit yüksekliğini iptal et */
+    .letter-scene{
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    /* Zarfı alttan sabitleme, normal akışa sok */
+    .letter-envelope{
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        margin-top: 6px !important;
+    }
+
+    /* Alt gölge boşluk oluşturmasın */
+    .letter-scene::after{
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px){
+
+    /* Kapalıyken kart hiç yer kaplamasın */
+    .letter-scene:not(.open) .letter-card{
+        display: none !important;
+    }
+
+    /* Açılınca normal şekilde gelsin */
+    .letter-scene.open .letter-card{
+        display: block !important;
+    }
+
+}
+
 </style>
 </head>
 <body>
