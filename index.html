@@ -2730,6 +2730,27 @@ setTimeout(() => {
     startHeartsAnimation();
 }, 1500);
 
+// ================= GALERİ PRELOAD (mobil gecikme fix) =================
+function preloadAllGalleryImages() {
+    const imgs = document.querySelectorAll('.photo-img');
+
+    imgs.forEach(img => {
+        const src = img.getAttribute('src');
+        if (!src) return;
+
+        const pre = new Image();
+        pre.src = src;
+    });
+}
+
+// Tarayıcı boşta kaldığında preload yap
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(preloadAllGalleryImages, { timeout: 2000 });
+} else {
+    setTimeout(preloadAllGalleryImages, 2000);
+}
+
+
 // Sayfa görünürlüğü değiştiğinde animasyonu kontrol et
 document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'hidden') {
