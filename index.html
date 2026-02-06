@@ -1514,6 +1514,231 @@ footer i {
 
 }
 
+/* ================= GİRİŞ EKRANI ================= */
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+.intro-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-card {
+    background: linear-gradient(145deg, #fff9f5, #f5f0ff);
+    border-radius: 25px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 30px 70px rgba(255, 107, 139, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: scale(0.9);
+    animation: cardAppear 1s ease 0.5s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 107, 139, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+    z-index: 0;
+}
+
+.intro-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.intro-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 44px;
+    color: var(--primary);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro-message {
+    font-size: 18px;
+    color: var(--dark);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.intro-highlight {
+    color: var(--secondary);
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.intro-btn {
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 180px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.intro-btn:hover::before {
+    opacity: 1;
+}
+
+.intro-btn i {
+    font-size: 20px;
+}
+
+.intro-btn-play {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    box-shadow: 0 10px 30px rgba(255, 107, 139, 0.4);
+}
+
+.intro-btn-play:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 107, 139, 0.6);
+}
+
+.intro-btn-skip {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--dark);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid #eee;
+}
+
+.intro-btn-skip:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.intro-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.intro-heart {
+    position: absolute;
+    font-size: 24px;
+    color: var(--primary-light);
+    opacity: 0;
+    animation: floatHearts 5s linear infinite;
+}
+
+@keyframes cardAppear {
+    from {
+        transform: scale(0.9) translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-card {
+        padding: 40px 25px;
+        max-width: 90%;
+    }
+    
+    .intro-title {
+        font-size: 36px;
+    }
+    
+    .intro-message {
+        font-size: 16px;
+    }
+    
+    .intro-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .intro-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
 
 </style>
 </head>
@@ -1527,6 +1752,35 @@ footer i {
 
 <!-- KALP ANİMASYONU BACKGROUND -->
 <div class="hearts-background" id="heartsBackground"></div>
+
+<!-- GİRİŞ EKRANI -->
+<div class="intro-screen" id="introScreen">
+    <div class="intro-hearts" id="introHearts"></div>
+    <div class="intro-card">
+        <div class="intro-card-content">
+            <h1 class="intro-title">Sevgilim</h1>
+            <p class="intro-message">
+                Hikayemize Hoş Geldin<br>
+                <span class="intro-highlight">BU ÖZEL MÜZİKLE</span><br>
+                SENİ ANILARIMIZLA BAŞ BAŞA BIRAKIYORUM
+            </p>
+            <div class="intro-buttons">
+                <button class="intro-btn intro-btn-play" id="playMusicBtn">
+                    <i class="fas fa-music"></i> ŞARKIYI AÇ
+                </button>
+                <button class="intro-btn intro-btn-skip" id="skipMusicBtn">
+                    <i class="fas fa-forward"></i> ŞARKIYI AÇMA
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MÜZİK ELEMENTİ -->
+<audio id="backgroundMusic" loop>
+    <source src="kalbim.mp3" type="audio/mpeg">
+    Tarayıcınız audio elementi desteklemiyor.
+</audio>
 
 <!-- NAVİGASYON -->
 <nav class="nav">
@@ -2769,31 +3023,106 @@ footer i {
 </footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Elementleri seç
-    const loading = document.getElementById('loading');
-    const imageModal = document.getElementById('imageModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalCardTitle = document.getElementById('modalCardTitle');
-    const modalDate = document.getElementById('modalDate');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalQuote = document.getElementById('modalQuote');
-    const modalImage = document.getElementById('modalImage');
-    const closeModal = document.getElementById('closeModal');
-    const photoCards = document.querySelectorAll('.photo-card');
-    const yearSections = document.querySelectorAll('.year-section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const letterScene = document.getElementById('letterScene');
-    const openLetterBtn = document.getElementById('openLetterBtn');
-    const mobileNavBtn = document.getElementById('mobileNavBtn');
-    const navLinksContainer = document.getElementById('navLinks');
-    const closeNav = document.getElementById('closeNav');
-    
-    // ================= KALP ANİMASYONU =================
-const heartsBackground = document.getElementById('heartsBackground');
+// ================= GİRİŞ EKRANI =================
+const introScreen = document.getElementById('introScreen');
+const playMusicBtn = document.getElementById('playMusicBtn');
+const skipMusicBtn = document.getElementById('skipMusicBtn');
+const backgroundMusic = document.getElementById('backgroundMusic');
+const introHearts = document.getElementById('introHearts');
 let letterOpened = false;
 
-// Kalp animasyonu fonksiyonu
+// Kalp animasyonu oluşturma (giriş ekranı için)
+function createIntroHearts() {
+    for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('intro-heart');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            
+            // Rastgele pozisyon
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.fontSize = `${16 + Math.random() * 20}px`;
+            
+            // Rastgele animasyon süresi
+            const duration = 4 + Math.random() * 3;
+            heart.style.animationDuration = `${duration}s`;
+            
+            // Rastgele başlangıç gecikmesi
+            heart.style.animationDelay = `${Math.random() * 2}s`;
+            
+            // Rastgele renk
+            const colors = ['#ff6b8b', '#6a67ce', '#ffd166'];
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            
+            introHearts.appendChild(heart);
+            
+            // Animasyon bittikten sonra kaldır
+            setTimeout(() => {
+                if (heart.parentNode === introHearts) {
+                    introHearts.removeChild(heart);
+                }
+            }, duration * 1000);
+        }, i * 300);
+    }
+}
+
+// Kalp animasyonunu periyodik olarak oluştur
+let heartInterval;
+function startIntroHearts() {
+    createIntroHearts();
+    heartInterval = setInterval(createIntroHearts, 5000);
+}
+
+// Giriş ekranını kaldırma
+function hideIntroScreen(playMusic = false) {
+    // Giriş ekranını gizle
+    introScreen.classList.add('hidden');
+    
+    // Kalp animasyonunu durdur
+    clearInterval(heartInterval);
+    
+    // Loading'i göster ve animasyonu başlat
+    setTimeout(() => {
+        const loading = document.getElementById('loading');
+        loading.classList.remove('hidden');
+        
+        // Loading animasyonu
+        setTimeout(() => {
+            loading.classList.add('hidden');
+            
+            // Hero animasyonlarını başlat
+            document.querySelector('.hero h1').style.animation = 'fadeUp 1s ease 0.3s forwards';
+            document.querySelector('.heart-divider').style.animation = 'fadeIn 1s ease 0.6s forwards';
+            document.querySelector('.hero p').style.animation = 'fadeUp 1s ease 0.9s forwards';
+            document.querySelector('.scroll-indicator').style.animation = 'fadeIn 1s ease 1.2s forwards';
+            
+            // Ana sayfa kalp animasyonunu başlat
+            startHeartsAnimation();
+            
+            // Müzik çalma
+            if (playMusic && backgroundMusic) {
+                backgroundMusic.volume = 0.7;
+                backgroundMusic.play().catch(e => {
+                    console.log("Müzik çalınamadı:", e);
+                    // Otomatik oynatma kısıtlaması varsa butona tıklama gerektir
+                    playMusicBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> TIKLA İZİN VER';
+                    playMusicBtn.onclick = () => {
+                        backgroundMusic.play();
+                        hideIntroScreen(true);
+                    };
+                });
+            }
+        }, 1500);
+    }, 800);
+    
+    // Scroll'u aktif et
+    document.body.style.overflow = 'auto';
+}
+
+// ================= ANA SAYFA KALP ANİMASYONU =================
+const heartsBackground = document.getElementById('heartsBackground');
+
+// Ana sayfa kalp animasyonu fonksiyonu
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart-particle');
@@ -2883,8 +3212,8 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Kalp oluşturma interval'i
-let heartInterval;
+// Ana sayfa kalp oluşturma interval'i
+let mainHeartInterval;
 
 function startHeartsAnimation() {
     // İlk kalpleri oluştur
@@ -2893,56 +3222,91 @@ function startHeartsAnimation() {
     }
     
     // Belirli aralıklarla yeni kalpler oluştur
-    heartInterval = setInterval(() => {
+    mainHeartInterval = setInterval(() => {
         if (document.visibilityState === 'visible') {
             createHeart();
         }
     }, 800);
 }
 
-// ================= LOADING =================
-// Loading ekranını kaldır ve kalp animasyonunu başlat
-setTimeout(() => {
-    loading.classList.add('hidden');
-    // Hero animasyonlarını başlat
-    document.querySelector('.hero h1').style.animation = 'fadeUp 1s ease 0.3s forwards';
-    document.querySelector('.heart-divider').style.animation = 'fadeIn 1s ease 0.6s forwards';
-    document.querySelector('.hero p').style.animation = 'fadeUp 1s ease 0.9s forwards';
-    document.querySelector('.scroll-indicator').style.animation = 'fadeIn 1s ease 1.2s forwards';
+// ================= DOM YÜKLENDİĞİNDE =================
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementleri seç
+    const loading = document.getElementById('loading');
+    const imageModal = document.getElementById('imageModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCardTitle = document.getElementById('modalCardTitle');
+    const modalDate = document.getElementById('modalDate');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalQuote = document.getElementById('modalQuote');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+    const photoCards = document.querySelectorAll('.photo-card');
+    const yearSections = document.querySelectorAll('.year-section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const letterScene = document.getElementById('letterScene');
+    const openLetterBtn = document.getElementById('openLetterBtn');
+    const mobileNavBtn = document.getElementById('mobileNavBtn');
+    const navLinksContainer = document.getElementById('navLinks');
+    const closeNav = document.getElementById('closeNav');
     
-    // Kalp animasyonunu başlat
-    startHeartsAnimation();
-}, 1500);
-
-// ================= GALERİ PRELOAD (mobil gecikme fix) =================
-function preloadAllGalleryImages() {
-    const imgs = document.querySelectorAll('.photo-img');
-
-    imgs.forEach(img => {
-        const src = img.getAttribute('src');
-        if (!src) return;
-
-        const pre = new Image();
-        pre.src = src;
-    });
-}
-
-// Tarayıcı boşta kaldığında preload yap
-if ('requestIdleCallback' in window) {
-    requestIdleCallback(preloadAllGalleryImages, { timeout: 2000 });
-} else {
-    setTimeout(preloadAllGalleryImages, 2000);
-}
-
-
-// Sayfa görünürlüğü değiştiğinde animasyonu kontrol et
-document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'hidden') {
-        clearInterval(heartInterval);
-    } else if (document.visibilityState === 'visible') {
-        startHeartsAnimation();
+    // Scroll'u engelle
+    document.body.style.overflow = 'hidden';
+    
+    // Loading'i gizle
+    if (loading) {
+        loading.style.display = 'none';
     }
-});
+    
+    // Giriş ekranı kalp animasyonunu başlat
+    if (introScreen && !introScreen.classList.contains('hidden')) {
+        startIntroHearts();
+    }
+    
+    // Giriş ekranı buton event'leri
+    if (playMusicBtn) {
+        playMusicBtn.addEventListener('click', () => hideIntroScreen(true));
+    }
+    
+    if (skipMusicBtn) {
+        skipMusicBtn.addEventListener('click', () => hideIntroScreen(false));
+    }
+    
+    // ESC tuşu ile geçiş
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && introScreen && !introScreen.classList.contains('hidden')) {
+            hideIntroScreen(false);
+        }
+    });
+    
+    // ================= GALERİ PRELOAD =================
+    function preloadAllGalleryImages() {
+        const imgs = document.querySelectorAll('.photo-img');
+
+        imgs.forEach(img => {
+            const src = img.getAttribute('src');
+            if (!src) return;
+
+            const pre = new Image();
+            pre.src = src;
+        });
+    }
+
+    // Tarayıcı boşta kaldığında preload yap
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(preloadAllGalleryImages, { timeout: 2000 });
+    } else {
+        setTimeout(preloadAllGalleryImages, 2000);
+    }
+
+    // Sayfa görünürlüğü değiştiğinde animasyonu kontrol et
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden') {
+            clearInterval(mainHeartInterval);
+        } else if (document.visibilityState === 'visible') {
+            startHeartsAnimation();
+        }
+    });
     
     // ================= MODAL İŞLEMLERİ =================
     // Fotoğraf kartlarına tıklama
@@ -2992,12 +3356,11 @@ document.addEventListener('visibilitychange', function() {
     });
     
     // ================= SCROLL ANİMASYONLARI =================
-const observerOptions = {
-    threshold: 0,
-    rootMargin: '0px 0px -40% 0px'
-};
+    const observerOptions = {
+        threshold: 0,
+        rootMargin: '0px 0px -40% 0px'
+    };
 
-    
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -3012,8 +3375,8 @@ const observerOptions = {
                         }, index * 150);
                     });
                 }
-				
-				observer.unobserve(entry.target);
+                
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -3081,19 +3444,28 @@ const observerOptions = {
         }
     }
     
-    letterScene.addEventListener('click', toggleLetter);
-    openLetterBtn.addEventListener('click', toggleLetter);
+    if (letterScene) {
+        letterScene.addEventListener('click', toggleLetter);
+    }
+    
+    if (openLetterBtn) {
+        openLetterBtn.addEventListener('click', toggleLetter);
+    }
     
     // ================= MOBİL NAVİGASYON =================
-    mobileNavBtn.addEventListener('click', function() {
-        navLinksContainer.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
+    if (mobileNavBtn) {
+        mobileNavBtn.addEventListener('click', function() {
+            navLinksContainer.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
     
-    closeNav.addEventListener('click', function() {
-        navLinksContainer.classList.remove('active');
-        document.body.style.overflow = '';
-    });
+    if (closeNav) {
+        closeNav.addEventListener('click', function() {
+            navLinksContainer.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
     
     // Mobil nav linklerine tıklayınca menüyü kapat
     document.querySelectorAll('.nav-link').forEach(link => {
