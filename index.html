@@ -5,10 +5,42 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <title>Bizim Hikayemiz</title>
 
+<meta name="description" content="Bizim aşk hikayemizin dijital albümü. 2021'den 2026'ya uzanan özel anılarımız.">
+<meta name="keywords" content="aşk, hikaye, anı, fotoğraf albümü, sevgililer">
+<meta property="og:image" content="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" as="style">
+
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* CSS en başına ekle */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Loading sınıfına ekle */
+.loading {
+    /* mevcut stilere ek olarak */
+    background: var(--gradient) fixed;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    will-change: opacity, visibility;
+}
+
+/* Fotoğraf img'lerine lazy loading ekle */
+.photo-img {
+    /* mevcut stillere ek olarak */
+    loading: lazy;
+    will-change: transform;
+}
+
+/* Font yükleme optimizasyonu */
+body {
+    /* mevcut stillere ek olarak */
+    font-display: swap;
+}
 :root {
     --primary: #ff6b8b;
     --primary-light: #ff9eb5;
@@ -1418,7 +1450,7 @@ footer i {
      data-desc="Birlikte çekildiğimiz ilk profesyonel fotoğraf. Seni objektifin karşısında görünce, ne kadar doğal ve güzel olduğunu bir kez daha anladım. Bu fotoğraf bizim için bir milattı." 
      data-quote="İlk profesyonel kare, sonsuz aşkımızın ilk belgesi oldu.">
     <div class="photo-img-container">
-        <img src="2021-1.jpeg" alt="İlk Profesyonel Fotoğrafımız" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-1.jpeg" alt="İlk Profesyonel Fotoğrafımız" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1433,7 +1465,7 @@ footer i {
      data-desc="Sahilin kar tuttuğu o büyülü akşam, karların üzerine oturup beraber şarap içtik. Denizin dalgaları ve üzerindeki kar örtüsü... İkimiz, iki şarap kadehi ve sonsuz bir sessizlik. Soğuk hava yanaklarımızı pembelestirirken, şarabın ve senin yakınlığının verdiği sıcaklık içimizi ısıtıyordu." 
      data-quote="Kar tutmuş sahilde, şarap ve denizle birlikte seninle olmak... Hayatın en büyülü anlarından biriydi.">
     <div class="photo-img-container">
-        <img src="2021-2.jpeg" alt="Sahilde Karlı Şarap Akşamı" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-2.jpeg" alt="Sahilde Karlı Şarap Akşamı" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1449,7 +1481,7 @@ footer i {
      data-desc="Yanıma geldiğin o gün, senin tenine dokunma cesaretini buldum. Parmak uçlarımla saçlarını okşadığım, ellerini tuttuğum ilk andı. Her dokunuşumda kalbim daha da hızlandı. Senin tenin bana en güvenli, en sıcak yer gibi geldi." 
      data-quote="Tenine dokunduğum ilk an, hayatımın en cesur ve en güzel anıydı.">
     <div class="photo-img-container">
-        <img src="2021-3.jpeg" alt="İlk Dokunuş Günü" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-3.jpeg" alt="İlk Dokunuş Günü" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1465,7 +1497,7 @@ footer i {
      data-desc="2021 yılında çekilmiş en güzel dış mekan fotoğrafımız. Gökyüzü, doğa ve biz... Manzaranın önünde el ele durduğumuz o an, her şeyin mükemmel olduğu bir andı. Işık, gölgeler ve aşkımızın uyumuyla yaratılmış bir sanat eseri gibiydi." 
      data-quote="Gökyüzü ve doğa, aşkımıza tanıklık etti.">
     <div class="photo-img-container">
-        <img src="2021-4.jpeg" alt="2021 En İyi Dış Çekim" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-4.jpeg" alt="2021 En İyi Dış Çekim" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1481,7 +1513,7 @@ footer i {
      data-desc="2021 biterken, 2022'ye girdiğimiz o yılbaşı gecesi... Konserdeydik. 3'ten geri sayım başladığında kalbim deli gibi atıyordu. '3... 2... 1...' derken senin kulağına eğildim ve hayatımda ilk kez birine 'Seni seviyorum' dedim. Yeni yılın ilk saniyesi, aşkımızın ilk 'Seni Seviyorum'u oldu." 
      data-quote="Yeni yıla 'Seni seviyorum' diyerek girdik. Daha güzel bir başlangıç olamazdı.">
     <div class="photo-img-container">
-        <img src="2021-5.jpeg" alt="Yılbaşı Seni Seviyorum Anısı" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1518495978942-83cdb633d6d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-5.jpeg" alt="Yılbaşı Seni Seviyorum Anısı" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518495978942-83cdb633d6d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1496,7 +1528,7 @@ footer i {
      data-desc="Starbucks'ta geçirdiğimiz o sıcak, samimi günlerden biri... Boş boş oturup kahvelerimizi yudumlarken, saatlerce konuştuk. Bazen sessizce oturup dışarıyı izledik, bazen gelecek hayallerimizi paylaştık. O kahve dükkanı, bizim küçük dünyamız olmuştu. En basit anlar bile seninle özeldi." 
      data-quote="Kahve kokusu, senin gülüşün ve bitmeyen sohbetlerimiz... Starbucks bizim evimizdi.">
     <div class="photo-img-container">
-        <img src="2021-6.jpeg" alt="Starbucks Günü" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-6.jpeg" alt="Starbucks Günü" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1511,7 +1543,7 @@ footer i {
      data-desc="İlk buluşmamızda öyle heyecanlıydım ki... Senden o kadar çok hoşlanmıştım ki, kokunu içime çekmek, ellerini tutup öpmek, o güzel kiraz dudaklarına dokunmak istiyordum. Ama kendimi zor tutuyordum. İçimdeki fırtınayı sana belli etmemeye çalışıyordum. Bakışlarımız buluşuyor ama sözcükler boğazımda düğümleniyordu." 
      data-quote="İlk buluşmada hissettiklerim, kelimelere sığmayacak kadar büyüktü.">
     <div class="photo-img-container">
-        <img src="2021-7.jpeg" alt="İlk Buluşma" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-7.jpeg" alt="İlk Buluşma" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1526,7 +1558,7 @@ footer i {
      data-desc="Arkadaşımızın evinde geçirdiğimiz o unutulmaz sabah... Güneşin ilk ışıkları odanın içine süzülürken, ilk uzun öpüşümüzde senin tenini saatlerce hissettim. Sabahın o taze enerjisiyle, öpüşlerimiz daha da anlamlıydı. Cinsel çekimimiz öyle güçlüydü ki, sabahın sessizliğinde kalp atışlarımız birbirine karışıyordu. O sabah, aşkımızın fiziksel boyutunu gün ışığında keşfettiğimiz andı." 
      data-quote="Sabah güneşi altında ilk uzun öpüşümüz, günün en güzel başlangıcı oldu.">
     <div class="photo-img-container">
-        <img src="2021-8.jpeg" alt="İlk Uzun Öpüş" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-8.jpeg" alt="İlk Uzun Öpüş" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1541,7 +1573,7 @@ footer i {
      data-desc="Seni gerçek hayatta ilk kez göreceğim gün. Fotoğraflardan tanıdığım yüzün karşımda duruyordu ve kalbim deli gibi atıyordu. Senden o kadar çok hoşlanıyordum ki, ama bunu asla belli edemedim. Senin henüz hislerimden haberdar olmadığın o an, içimdeki fırtınayı saklamak için kendimi zor tutuyordum. Gülümsemen, bakışların, her şeyin... Hepsi büyüleyiciydi." 
      data-quote="Seni ilk gördüğüm an, hayatımın en güzel sırrını sakladığım andı.">
     <div class="photo-img-container">
-        <img src="2021-9.jpeg" alt="Seni İlk Görüş" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-9.jpeg" alt="Seni İlk Görüş" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1556,7 +1588,7 @@ footer i {
      data-desc="O kafede geçirdiğimiz en eğlenceli günlerden biri... Saatlerce oturup konuştuk, güldük, kahkahalar attık. Her anımız neşe doluydu, her şakamız birbirimize daha da yakınlaştırdı bizi. O gün, sadece bir kahve molası değil, birlikte biriktirdiğimiz en güzel anılardan biri oldu. Seninle gülmek, dünyanın en güzel terapisidir." 
      data-quote="Kahve, kahkaha ve sen... En güzel üçlü.">
     <div class="photo-img-container">
-        <img src="2021-10.jpeg" alt="Kafe Eğlencesi" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1534008897995-27a23e859048?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-10.jpeg" alt="Kafe Eğlencesi" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534008897995-27a23e859048?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1571,7 +1603,7 @@ footer i {
      data-desc="Yılbaşı konserinde, tam 00:00'ı beklerken, sana 'Seni seviyorum' diyeceğim anı hayal ediyordum. O sırada arkadaşlarımız habersizce bizi fotoğraflamış. Gün sonunda fotoğrafı gördüğümde nefesim kesildi. Bana öyle bir bakmışsın ki... O bakışta tüm sevgi, sıcaklık ve bağlılık vardı. O an, senin bana bakışına bir kez daha aşık oldum." 
      data-quote="Yılbaşı gecesi, senin bana bakışın, hayatımın en değerli hediyesi oldu.">
     <div class="photo-img-container">
-        <img src="2021-11.jpeg" alt="Yılbaşı Bakışı" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-11.jpeg" alt="Yılbaşı Bakışı" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1586,7 +1618,7 @@ footer i {
      data-desc="Seni öperken çekilmeyi sevdiğim nadir fotoğraflarımızdan biri... yakınlığımızın derinliği, her şey bu karede saklı. Seni öperken çekilen bu fotoğraf, aşkımızın en saf, en dürüst halini yansıtıyor. Saklamak istediğim ama aynı zamanda tüm dünyaya göstermek istediğim bir an." 
      data-quote="Seni öperken çekilen her fotoğraf, aşkımızın bir kanıtıdır.">
     <div class="photo-img-container">
-        <img src="2021-12.jpeg" alt="Öpüş Fotoğrafı" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-12.jpeg" alt="Öpüş Fotoğrafı" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1601,7 +1633,7 @@ footer i {
      data-desc="İlk kar günümüzde, sen sırtıma çıktın ve ben karın içinde seni taşıdım. O an ne kadar eğlendik! Kahkahalarımız karlı havada yankılanıyordu. Senin sırtımda olman, benim seni taşıyor olmam... Bu basit ama unutulmaz an, aşkımızın ne kadar saf ve eğlenceli olabileceğini gösterdi." 
      data-quote="Karın içinde seni sırtımda taşımak, aşkımızın en hafif ama en değerli anlarından biriydi.">
     <div class="photo-img-container">
-        <img src="2021-13.jpeg" alt="Kar İçinde Sırtında" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2021-13.jpeg" alt="Kar İçinde Sırtında" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1624,12 +1656,13 @@ footer i {
         <p class="year-subtitle">Aşkımızın kök saldığı, birbirimizi daha iyi tanıdığımız ve birlikte büyüdüğümüz yıl...</p>
     </div>
     <div class="gallery" id="gallery2022">
+	
 <!-- 1. Fotoğraf -->
 <div class="photo-card" data-title="Sahildeki Altın Selfiemiz" 
      data-desc="Sahilde gün batarken yavaş yavaş çekildiğimiz en güzel selfielerden biri. Güneşin altın rengi ışıkları yüzümüze vururken, senin gözlerindeki mutluluğu görmek her şeye değerdi." 
      data-quote="Gün batımının altın ışığında, aşkımızın en samimi selfiesi doğdu.">
     <div class="photo-img-container">
-        <img src="2022-1.jpeg" alt="Sahildeki Altın Selfiemiz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-1.jpeg" alt="Sahildeki Altın Selfiemiz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1644,7 +1677,7 @@ footer i {
      data-desc="Sahilde oturup güneş yüzümüze vurmuşken çekildiğimiz en güzel selfielerimizden biri. Oruçlu olmamıza rağmen enerjimiz ve mutluluğumuz yüzümüzden okunuyordu. Gözlüklerimizin ardındaki bakışlarımız, o sıcak yaz gününde birbirimize olan sevgimizi anlatıyor gibiydi. Güneş ışığı yüzümüzü aydınlatırken, aşkımız da kalplerimizi ısıtıyordu." 
      data-quote="Oruçlu günümüzde güneş bizi ısıttı, aşkımız ise doyurdu.">
     <div class="photo-img-container">
-        <img src="2022-2.jpeg" alt="Güneşin Altında" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-2.jpeg" alt="Güneşin Altında" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1659,7 +1692,7 @@ footer i {
      data-desc="Asansörde çekildiğimiz en karizmatik fotoğrafımızdı. O küçük alanda bile ne kadar uyumlu ve harika göründüğümüzü fark etmiştik. Benim ciddi duruşuma karşılık senin o doğal gülümsemen, tam bir tezat oluşturuyor ve bu fotoğrafı özel kılıyordu. Asansörün aynasında yansıyan görüntümüz, aşkımızın ne kadar güçlü olduğunu gösterir gibiydi." 
      data-quote="Asansörde sadece katlar değil, aşkımız da yükseldi.">
     <div class="photo-img-container">
-        <img src="2022-3.jpeg" alt="Asansördeki Karizma Anımız" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-3.jpeg" alt="Asansördeki Karizma Anımız" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1674,7 +1707,7 @@ footer i {
      data-desc="Big Fest festivaline gittiğimiz ilk gündü. Kalabalığın ortasında sadece ikimize ait bir an yaşıyorduk. Ben sana bakarken, sen objektife gülümsüyordun. Müziğin ritmi, insanların coşkusu ve aramızdaki sessiz aşkın tuhaf ama güzel uyumu... Festivalin en güzel sahnesi bizdik, seyircilerin arasında kaybolmuş iki aşık." 
      data-quote="Festivalde müzik çalarken, kalbimizin ritmi daha güçlü atıyordu.">
     <div class="photo-img-container">
-        <img src="2022-4.jpeg" alt="İlk Festivalimiz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-4.jpeg" alt="İlk Festivalimiz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1689,7 +1722,7 @@ footer i {
      data-desc="Siyah beyaz çizgili aynı kıyafetleri giydiğimiz o özel gün. Uyumumuz sadece giyimimizde değil, bakışlarımızda da saklıydı. Birbirimize bakarken çekilen bu fotoğrafta, aşkımızın ne kadar saf ve karşılıklı olduğunu görüyordum. Desenlerin tekrarı gibi, biz de birbirimizi tamamlıyor, aynı ritmi paylaşıyorduk. Modanın ötesinde, kalplerimizin uyumunu sergiliyorduk." 
      data-quote="Aynı desenleri giyiyorduk, çünkü zaten aynı hayalleri taşıyorduk.">
     <div class="photo-img-container">
-        <img src="2022-5.jpeg" alt="Siyah Beyaz Uyumumuz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-5.jpeg" alt="Siyah Beyaz Uyumumuz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1704,7 +1737,7 @@ footer i {
      data-desc="Bayram günü bulduğumuz o sevimli gözlükler... Sen uğur böcekli gözlüğü taktığında yüzündeki mutluluk ışıl ışıldı. 'Bu benim bayramım' dediğin o anı asla unutmayacağım. Gözlüklerin komikliği, bayramın coşkusu ve senin o saf mutluluğun birleşince, her şey daha da anlamlı olmuştu. O gün gerçekten senin bayramındı, çünkü senin mutluluğun benim için her şeydi." 
      data-quote="Uğur böceği gözlüğün, bize sadece şans değil sonsuz mutluluk getirdi.">
     <div class="photo-img-container">
-        <img src="2022-6.jpeg" alt="Bayramda Uğur Böcüğü" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-6.jpeg" alt="Bayramda Uğur Böcüğü" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1719,7 +1752,7 @@ footer i {
      data-desc="İlk bayramımızda sana bakıp çekildiğim en güzel fotoğraftı. Bayramlık elbiseler içindeki sen, her zamankinden daha güzeldin. Gözlerindeki mutluluk ve masumiyet, bayramın anlamını daha da derinleştiriyordu. O an objektife değil, sadece sana bakıyordum çünkü sen benim gerçek bayramımdın. Geleneklerin, aile ziyaretlerinin ve bayramlaşmaların ötesinde, senin yanında olmak en büyük bayramımdı." 
      data-quote="Bayramın en güzel hediyesi, senin gözlerindeki mutluluktu.">
     <div class="photo-img-container">
-        <img src="2022-7.jpeg" alt="İlk Bayram Bakışım" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1534008897995-27a23e859048?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-7.jpeg" alt="İlk Bayram Bakışım" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534008897995-27a23e859048?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1734,7 +1767,7 @@ footer i {
      data-desc="Rivaya tatilimizde denizin içinde çekildiğimiz unutulmaz fotoğraf. Deniz kızı gibi görünen sen, suların arasında adeta bir peri gibiydin. Ben de kafandan öperken, o anın sonsuza kadar sürmesini diledim. Denizin serin suları, güneşin sıcaklığı ve aşkımızın samimiyeti birleşmişti. Suyun üzerinde yüzen saçların, doğanın sana verdiği bir taç gibiydi. O tatil, aşkımızın da tatile çıktığı, özgürce aktığı bir dönemdi." 
      data-quote="Denizde bir deniz kızı, ben de onun prensiydim.">
     <div class="photo-img-container">
-        <img src="2022-8.jpeg" alt="Deniz Kızı ve Prens Anımız" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-8.jpeg" alt="Deniz Kızı ve Prens Anımız" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1749,7 +1782,7 @@ footer i {
      data-desc="Çekildiğimiz en masum fotoğrafımız. Her baktığımda dakikalarca izlediğim, içimi huzurla dolduran o kare. Bu fotoğrafı gördüğümde aklıma hep çilek gelir - tatlı, saf ve doğal... Tıpkı aşkımız gibi. Bakışlarımızdaki o saf sevgi, henüz hiçbir yük taşımayan, sadece var olan bir aşkın temsili gibi. Bu fotoğrafta sadece iki insan değil, iki ruhun saf buluşmasını görüyorum." 
      data-quote="Fotoğraftaki masumiyetimiz, tıpkı çilek gibi tatlı ve doğaldı.">
     <div class="photo-img-container">
-        <img src="2022-9.jpeg" alt="Çilek Tadında" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-9.jpeg" alt="Çilek Tadında" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1764,7 +1797,7 @@ footer i {
      data-desc="Ablamı istemeye geleceklerdi ve ikimiz o gün o kadar güzeldik ki, adeta gelecekteki bizi görmüştük. Senin o zarif duruşun, ışıldayan yüzün ve içten gülümsemen karşısında 'Ben seni istemeye geldiğimde nasıl olacak?' diye sormuştum kendime. Çünkü o gün öyle güzeldin ki, gelecekteki o özel günü daha şimdiden yaşıyor gibiydik. Her detay, her bakış, her gülümseme bize aşkımızın ne kadar değerli olduğunu hatırlatıyordu." 
      data-quote="O gün güzelliğinle, gelecekteki isteme günümüzü şimdiden yaşattın bana.">
     <div class="photo-img-container">
-        <img src="2022-10.jpeg" alt="İsteme Günü Hayalimiz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-10.jpeg" alt="İsteme Günü Hayalimiz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1779,7 +1812,7 @@ footer i {
      data-desc="Ablamın nişan gününde o kadar güzel bir çifttik ki, bütün gözler bizdeydi. Senin o zarif elbisen ve etkileyici güzelliğin, benim de sana uyum sağlayan duruşumla adeta nişanın yıldızlarıydık. İnsanlar bize bakarken, sadece dış güzelliğimizi değil, aramızdaki o görünmez bağı da görüyorlardı sanki. Nişan bizim olmasa da, aşkımızın ışığı her yeri aydınlatmıştı. O gün anladık ki, biz sadece bir çift değil, birbirini tamamlayan iki yarıydık." 
      data-quote="Nişan töreninde herkes bize bakıyordu, çünkü aşkımız en parlak ışıktı.">
     <div class="photo-img-container">
-        <img src="2022-11.jpeg" alt="Nişandaki Parlayan Çift" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-11.jpeg" alt="Nişandaki Parlayan Çift" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1794,7 +1827,7 @@ footer i {
      data-desc="Ablamın nişanından sonra after için gittiğimiz kafede çekildiğimiz ve ikimizin en güzel karesiydi. O gün herkes bize bakarken, ileride evleneceğimiz ve güzel bir yuvamız olacağı düşüncesindeydiler. Bakışlarımızdaki uyum, gülüşlerimizdeki mutluluk, herkese geleceğimizin ne kadar parlak olacağını anlatıyor gibiydi. Kafenin loş ışıkları altında bile aşkımız parlıyor, etrafa umut saçıyordu. O an sadece bir fotoğraf değil, geleceğimize dair bir vaatti." 
      data-quote="Kafedeki o kare, herkese gelecekteki mutlu evimizin habercisiydi.">
     <div class="photo-img-container">
-        <img src="2022-12.jpeg" alt="Nişan Sonrası Hayaller" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-12.jpeg" alt="Nişan Sonrası Hayaller" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1809,7 +1842,7 @@ footer i {
      data-desc="2021'de tanıştık, 2026'dayız ve gerçekten de bu fotoğrafımız kadar bakıp hayallere daldığım başka bir fotoğrafımız daha olmadı. Her baktığımda bizi farklı bir boyuta taşıyan, geçmişi, şimdiyi ve geleceği aynı karede birleştiren bir sihri var. Bu fotoğraf sadece bir anı değil, aşkımızın zaman üstü bir kanıtı. Bakışlarımızdaki o derinlik, sadece birbirimize değil, ortak hayallerimize de odaklanmış gibi. Bu karede donup kalan zaman, bize sonsuzluğun ne kadar yakın olduğunu hatırlatıyor." 
      data-quote="Bu fotoğrafa her baktığımda, 2021'den 2026'ya ve ötesine uzanan bir yolculuğa çıkıyorum.">
     <div class="photo-img-container">
-        <img src="2022-13.jpeg" alt="Hayallere Dalışımız" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-13.jpeg" alt="Hayallere Dalışımız" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1824,7 +1857,7 @@ footer i {
      data-desc="Köprünün ışıkları önünde çekildiğimiz en romantik fotoğrafımızdı. Işıkların yansımaları suda dans ederken, biz de kendi aşk dansımızı yaşıyorduk. Geceyi aydınlatan köprü ışıkları gibi, aşkımız da hayatımızı aydınlatıyordu. Soğuk havaya rağmen içimiz sıcacıktı, çünkü birbirimize olan sevgimiz en büyük ısı kaynağımızdı. O an, şehrin gürültüsünde sadece ikimize ait bir sessizlik vardı. Köprüler birbirini buluşturur ya, işte o köprü de kalplerimizi bir kez daha buluşturmuştu." 
      data-quote="Köprünün ışıkları geceyi aydınlatırken, aşkımız da ömrümüzü aydınlattı.">
     <div class="photo-img-container">
-        <img src="2022-14.jpeg" alt="Köprünün Işıkları" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2022-14.jpeg" alt="Köprünün Işıkları" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1847,12 +1880,13 @@ footer i {
         <p class="year-subtitle">Birbirimize kenetlendiğimiz, zorlukları birlikte aştığımız ve bağımızın derinleştiği yıl...</p>
     </div>
     <div class="gallery" id="gallery2023">
+	
 <!-- 1. Fotoğraf -->
 <div class="photo-card" data-title="YANAKLARR" 
      data-desc="Kafede yanağını ısırırken çekildiğimiz o masum an. Gözlerini kapayıp gülümsediğin o an, ne kadar saf ve mutlu olduğumuzu gösteriyordu. Yanağındaki nazik dokunuşumla, senin de içten gelen o gülümsemen... Kafenin sıcak ortamında, dünyadan soyutlanmış sadece ikimize ait bir mutluluk anıydı. O anki masumiyetimiz ve samimiyetimiz, fotoğrafa bakan herkese geçiyordu." 
      data-quote="Gözlerin kapalı gülümserken, kalbim gözlerini açtı.">
     <div class="photo-img-container">
-        <img src="2023-1.jpeg" alt="YANAKLARR" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-1.jpeg" alt="YANAKLARR" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1867,7 +1901,7 @@ footer i {
      data-desc="Okuldan yeni çıkmıştın ve hemen sahile gitmiştik. Kayaların üzerine oturmuş, sana bakarken çekildiğimiz o güzel fotoğraf... Okul yorgunluğu yüzünde olsa da, hala her zamanki gibi ışıl ışıldın. Denizin serin esintisi, akşamüstü güneşinin yumuşak ışığı ve senin o doğal güzelliğin birleşince, her şey mükemmeldi. Okul kitaplarından çıkıp, aşkımızın sayfalarına dönmüştük sanki." 
      data-quote="Okuldan çıkmıştın ama hala dünyanın en güzel öğrencisiydin.">
     <div class="photo-img-container">
-        <img src="2023-2.jpeg" alt="Okul Sonrası Sahil" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-2.jpeg" alt="Okul Sonrası Sahil" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1882,7 +1916,7 @@ footer i {
      data-desc="Ortaköy'de deniz kenarında çekildiğimiz çok karizmatik fotoğrafımızdı. Köprünün muhteşem manzarası önünde, ikimiz de çok havalı duruyorduk. Senin o şık duruşun ve kendinden emin bakışın, benim de sana uyum sağlayan tavrımla mükemmel bir uyum yakalamıştık. Ortaköy'ün hareketli atmosferinde, sadece ikimize ait bir zarafet anıydı. Her baktığımda, ne kadar güçlü ve uyumlu bir çift olduğumuzu hatırlatıyor." 
      data-quote="Ortaköy'de sadece köprü değil, aşkımız da görkemliydi.">
     <div class="photo-img-container">
-        <img src="2023-3.jpeg" alt="Ortaköy'de Karizma" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-3.jpeg" alt="Ortaköy'de Karizma" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1897,7 +1931,7 @@ footer i {
      data-desc="Kadıköy'de Boğa heykelinde çekildiğimiz o güzel an. Telefonumuzun kamerası kötü çekse de, kalitesi düşük olsa da, o gün hatırladığım en güzel günlerdendi. Boğa heykelinin önünde, Kadıköy'ün hareketli atmosferinde, sadece ikimize ait bir an yakalamıştık. Fotoğrafın bulanıklığı, o günkü mutluluğumuzun netliğini asla gizleyemezdi. Bazen teknolojinin sınırları, aşkın sınırsızlığı karşısında ne kadar küçük kalıyor..." 
      data-quote="Fotoğraf bulanıktı ama hatıramız kristal kadar berraktı.">
     <div class="photo-img-container">
-        <img src="2023-4.jpeg" alt="Kadıköy Boğası" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-4.jpeg" alt="Kadıköy Boğası" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1912,7 +1946,7 @@ footer i {
      data-desc="Kafede beraber çekildiğimiz o güzel fotoğraftı. O gün kendimi pek güzel hissetmesem de, sen gerçekten çok güzeldin. Bütün gün gözümü senden alamadım. Işıltın kafenin loş ortamında bile parlıyor, etrafa yayılıyordu. Kahvenin buharı, pastaların kokusu ve senin o doğal güzelliğin... Kafedeki herkes ne kadar şanslı olduğumu bilmiyordu, ama ben biliyordum. Senin yanında olmak, en kötü günümü bile güzelleştirmeye yetiyordu." 
      data-quote="Kafede kahve değil, senin güzelliğin ısıtıyordu içimi.">
     <div class="photo-img-container">
-        <img src="2023-5.jpeg" alt="Kafedeki Işıltın" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-5.jpeg" alt="Kafedeki Işıltın" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1927,7 +1961,7 @@ footer i {
      data-desc="Siyah beyaz fotoğraflarımızı düşündüğümde hep bu kare geliyor aklıma. Sahilde çekildiğimiz en güzel fotoğraflarımızdan biriydi. Renklerin yokluğunda bile, aşkımızın tüm canlılığıyla parlıyordu. Siyah beyaz tonlar, duygularımızın derinliğini daha da belirginleştiriyordu sanki. O an, zamanın durduğu, her şeyin siyah beyaz ama aşkımızın renkli kaldığı bir ana tanıklık etmiştik. Gerçekten de ne kadar güzel bir çift olduğumuzu kanıtlıyordu bu fotoğraf." 
      data-quote="Siyah beyaz fotoğrafta, aşkımız tüm renkleriyle parlıyordu.">
     <div class="photo-img-container">
-        <img src="2023-6.jpeg" alt="Siyah Beyaz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-6.jpeg" alt="Siyah Beyaz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1942,7 +1976,7 @@ footer i {
      data-desc="Param olmasa da, bir şekilde hep beni götürüp kumru tost yedirdiğin o yerde çekildiğimiz fotoğraf. O anki gülümsemen, hayatımda gördüğüm en güzel gülümsemelerden biriydi. Maddi imkansızlıkların, senin cömert yüreğin ve güzel gülüşün karşısında hiçbir anlamı yoktu. Basit bir kumru tost, senin yanında en lüks yemekten daha değerli hale geliyordu. O gülümsemende, saf mutluluğu ve koşulsuz sevgiyi görüyordum." 
      data-quote="Kumru tost basitti, ama senin gülümsemen dünyanın en zengin hediyesiydi.">
     <div class="photo-img-container">
-        <img src="2023-7.jpeg" alt="Kumru Tost" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-7.jpeg" alt="Kumru Tost" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1957,7 +1991,7 @@ footer i {
      data-desc="Akşam sahilde otururken, arkamızda köprünün muhteşem manzarasıyla çekildiğimiz fotoğraf. En sevdiğim yaz fotoğraflarımızdan biriydi. Gün batımının son ışıkları köprüyü altın rengine boyarken, biz de o manzaranın bir parçası olmuştuk. Sahilin serin esintisi, uzaktan gelen deniz kokusu ve senin yanımdaki varlığın... Yaz akşamlarının en güzel halini yaşıyorduk" 
      data-quote="Köprü iki yakayı birleştirirken, biz de birbirimize kavuşmuştuk.">
     <div class="photo-img-container">
-        <img src="2023-8.jpeg" alt="Köprü Manzaralı Yaz Akşamı" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1501281667305-0d4eb539d476?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-8.jpeg" alt="Köprü Manzaralı Yaz Akşamı" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1501281667305-0d4eb539d476?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1972,7 +2006,7 @@ footer i {
      data-desc="O gün içtiğim kokteyl beni çarpmış, alkollüydüm ve bana karşı çok sabır göstermiştin. O halimle bile beni anlayışla karşılayıp, yanımda oldun. Belki o gün en iyi halimde değildim, ama sen en iyi versiyonunu gösterdin bana. Sabrın ve anlayışın, o gün içtiğim tüm kokteyllerden daha değerliydi. Zor anlarımda bile yanımda olman, aşkımızın ne kadar güçlü olduğunu bir kez daha gösterdi." 
      data-quote="Alkollüydüm ama aşkımız ayıktı, senin sabrın da sonsuzdu.">
     <div class="photo-img-container">
-        <img src="2023-9.jpeg" alt="Kokteyl Günü Sabrın" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-9.jpeg" alt="Kokteyl Günü Sabrın" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -1987,7 +2021,7 @@ footer i {
      data-desc="O gün denize gidip yüzüp yanmıştık. Daha sonra üstümüzü giyinip, köpeğimiz Latte'yi de alarak kafeye gittik. Latte kucağımızdayken çekildiğimiz o çok güzel fotoğrafımız... Güneş yanığı yüzlerimiz, ıslak saçlarımız ve mutlu bir aile tablosu. Latte'nin o masum bakışları, senin gülümsemen ve benim huzurlu halim birleşince, küçük ailemizin en değerli anlarından birini yakalamıştık. Üçümüz bir bütündük, eksiksiz ve mutlu." 
      data-quote="Latte kucağımızda, aşkımız kalbimizde, mutluluk yüzümüzdeydi.">
     <div class="photo-img-container">
-        <img src="2023-10.jpeg" alt="Latte'li Aile Fotoğrafımız" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-10.jpeg" alt="Latte'li Aile Fotoğrafımız" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2002,7 +2036,7 @@ footer i {
      data-desc="Ballişu daha yavruyken, aşı olduktan sonra seninle AVM'ye gittiğimiz gün. Ballişu senin kucağındayken çekildiğimiz o güzel ve samimi fotoğrafımız... Ballişu büyüdü ama seni hala ilk günkü gibi çok seviyor ve seni gördüğünde hala ilk günkü gibi heyecanlanıyor. O küçük yavrunun kocaman sevgi dolu kalbi, senin şefkatli kucağında güvende hissetmişti. Üçümüzün ilk gezilerinden biriydi teşekkür ederiz çöçi ablası." 
      data-quote="Ballişu büyüdü, ama seni olan sevgisi hep yavru kalpli kaldı.">
     <div class="photo-img-container">
-        <img src="2023-11.jpeg" alt="Ballişu'nun İlk AVM Macerası" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-11.jpeg" alt="Ballişu'nun İlk AVM Macerası" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2017,7 +2051,7 @@ footer i {
      data-desc="Galata Kulesi'nin önünde çekildiğimiz güzel ve romantik selfie'miz. Tarihin ve aşkımızın buluştuğu o an... Kulenin ihtişamı önünde, iki küçük aşık olarak ne kadar mutlu olduğumuzu gösteriyorduk. Galata'nın dar sokaklarından çıkıp, kulenin heybetli gölgesinde buluşmuştuk. İstanbul'un bu tarihi simgesi önünde, kendi tarihimizi yazıyor gibiydik. Romantik bir öğle sonrası, unutulmaz bir hatıra ve sonsuz bir aşk..." 
      data-quote="Galata Kulesi yüzyıllara tanıklık etti, bizim aşkımıza da tanık olsun.">
     <div class="photo-img-container">
-        <img src="2023-12.jpeg" alt="Galata Kulesi Önünde Aşk" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-12.jpeg" alt="Galata Kulesi Önünde Aşk" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2032,7 +2066,7 @@ footer i {
      data-desc="Yeni telefonunu aldığın ilk gündü ve o gün çok heyecanlıydık. Hemen dışarı çıkıp sahile gittik ve ilk fotoğraflarımızı yeni telefonla çekilmiştik. Her şey mükemmel uyum içindeydi. Yeni telefon eski anıları kaydetmek için hazırdı, biz de yeni anılar biriktirmek için. Sahilin serin havasında, yeni bir başlangıcın heyecanını yaşıyorduk." 
      data-quote="Telefon yeniydi, ama aşkımız hep tazeydi.">
     <div class="photo-img-container">
-        <img src="2023-13.jpeg" alt="Yeni Telefon, Eski Aşk" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2023-13.jpeg" alt="Yeni Telefon, Eski Aşk" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2055,12 +2089,13 @@ footer i {
         <p class="year-subtitle">Geleceği birlikte kurmaya başladığımız, hayallerimizi paylaştığımız ve birlikte planlar yaptığımız yıl...</p>
     </div>
     <div class="gallery" id="gallery2024">
+	
 <!-- 1. Fotoğraf -->
 <div class="photo-card" data-title="Küçük Sarılışımız" 
      data-desc="Yüzümüz, benliğimiz o kadar küçüktü ki şimdiye göre... Sarılarak çekildiğimiz o fotoğrafta, dünyanın tüm karmaşasından sıyrılmış iki küçük insandık. Her baktığımda o güne dönüp, sana tekrar sarılmak istiyorum. O sarılışın sıcaklığını, güvenini, huzurunu özlüyorum. Ne kadar küçük görünsek de, o anki aşkımız kocaman, engin bir okyanus gibiydi. O sarılışta kaybolmak, senin nefesini dinlemek, kalp atışlarımızın senkronize olması..." 
      data-quote="Küçücük sarılışımızda, kocaman bir aşk saklıydı.">
     <div class="photo-img-container">
-        <img src="2024-1.jpeg" alt="Küçük Sarılışımız" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-1.jpeg" alt="Küçük Sarılışımız" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2075,7 +2110,7 @@ footer i {
      data-desc="Askerde ayağımı kırıp gelip 2 ay evde yattıktan sonra, tekrar askere gitmeden önce kafede geçirdiğimiz gündü. O gün en mutlu olduğum gündü, çünkü bilmiyordum ki o günden sonra seni bir daha göremeyeceğim. Kahvenin tadı, senin gülüşün, ellerimizin teması... Her şey o kadar normal, o kadar güzeldi ki." 
      data-quote="Son kahvemizi içerken, son mutluluğumuzu da yaşıyordum.">
     <div class="photo-img-container">
-        <img src="2024-2.jpeg" alt="Son Mutlu Günümüz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-2.jpeg" alt="Son Mutlu Günümüz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2090,7 +2125,7 @@ footer i {
      data-desc="Köpeğimiz Latte ile geçirdiğimiz en tatlı günlerdendi. Kafede, Latte'nin masum bakışları arasında kahvelerimizi yudumluyorduk. Üçümüzün bir arada olduğu o güzel anlar." 
      data-quote="Kafede üçümüz: İki kahve, bir latte ve sonsuz mutluluk.">
     <div class="photo-img-container">
-        <img src="2024-3.jpeg" alt="Latte'li Kafe Keyfi" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1560185127-6ed189bf02f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-3.jpeg" alt="Latte'li Kafe Keyfi" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1560185127-6ed189bf02f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2105,7 +2140,7 @@ footer i {
      data-desc="Yıllarca bakıp gerçekten de özlediğim bir fotoğraf. Bu fotoğrafta zaman durdu, ama özlemim hiç durmadı." 
      data-quote="Bu fotoğrafta zaman durdu, ama özlemim hiç durmadı.">
     <div class="photo-img-container">
-        <img src="2024-4.jpeg" alt="Yıllarca Bakacağım Fotoğraf" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-4.jpeg" alt="Yıllarca Bakacağım Fotoğraf" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2120,7 +2155,7 @@ footer i {
      data-desc="Bu fotoğrafta o kadar güzel gülüp bana baktın ki, sana neden aşık olduğumu yeniden anladım." 
      data-quote="Gülüşünde aşkımın nedenini gördüm, bakışında sonsuzluğu.">
     <div class="photo-img-container">
-        <img src="2024-5.jpeg" alt="Güzel Gözlüm" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-5.jpeg" alt="Güzel Gözlüm" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2135,7 +2170,7 @@ footer i {
      data-desc="Kalabalık bir ortamdaydık ama fotoğrafta sadece ikimiz vardık." 
      data-quote="Kalabalıkta kaybolmadık, birbirimizi bulduk.">
     <div class="photo-img-container">
-        <img src="2024-6.jpeg" alt="Arkadaşlar Arasında Biz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-6.jpeg" alt="Arkadaşlar Arasında Biz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2150,7 +2185,7 @@ footer i {
      data-desc="Aynalarda yansıyan uyumumuz ve o küçük asansördeki mutluluğumuz..." 
      data-quote="Asansörde aynalar çoğalttı görüntümüzü, aşkımız çoğalttı mutluluğumuzu.">
     <div class="photo-img-container">
-        <img src="2024-7.jpeg" alt="Asansördeki Yakışıklılık" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-7.jpeg" alt="Asansördeki Yakışıklılık" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2165,7 +2200,7 @@ footer i {
      data-desc="Ablamın nikahında herkes gelini izlerken, ben sadece sana bakıyordum." 
      data-quote="Nikah salonunda herkes gelini izlerken, benim gözlerim sadece sende takılı kaldı.">
     <div class="photo-img-container">
-        <img src="2024-8.jpeg" alt="Nikah Salonundaki Tek Güzellik" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-8.jpeg" alt="Nikah Salonundaki Tek Güzellik" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2180,7 +2215,7 @@ footer i {
      data-desc="Nikah sonrası arabada kahkahalarla geçen o unutulmaz yolculuk." 
      data-quote="Yolda değil, kahkahalarımızda kaybolmuştuk o gece.">
     <div class="photo-img-container">
-        <img src="2024-9.jpeg" alt="Alperen Abi'nin Eğlenceli Yolculuğu" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-9.jpeg" alt="Alperen Abi'nin Eğlenceli Yolculuğu" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2195,7 +2230,7 @@ footer i {
      data-desc="Ablamın nikahında sana diz çökerek verdiğim ve içimde kalan o çiçek." 
      data-quote="Son çiçeğimi verdim, ama aşkımın kökleri hep taze kaldı.">
     <div class="photo-img-container">
-        <img src="2024-10.jpeg" alt="Son Çiçeğim" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2024-10.jpeg" alt="Son Çiçeğim" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2218,12 +2253,13 @@ footer i {
         <p class="year-subtitle">Aşkımızın olgunlaştığı, birbirimize daha da kenetlendiğimiz ve sonsuzluğa uzandığımız yıl...</p>
     </div>
     <div class="gallery" id="gallery2025">
+	
 <!-- 1. Fotoğraf -->
 <div class="photo-card" data-title="Barış Sabahı" 
      data-desc="Seninle tekrardan barışıp 1 sene sonra seni gördüğüm, kokunu içime çektiğim günün sabahıydı. Yatakta beraber fotoğraf çekildik, ilk sabahımızdı. O kadar özlemiştim ki seni... Tarifi yok. Ellerin, kokun, tenin, her şeyinle seni çok özlemiştim. O sabah uyandığımda yanımda seni görmek, bir rüya gibiydi. Bir yıllık ayrılığın acısı, o sabahki kavuşmanın mutluluğunda eriyip gitti. Nefesini dinledim, saçlarını kokladım, ellerini tuttum... Her şey gerçekti, sen geri gelmiştin." 
      data-quote="Bir yıllık ayrılık, bir sabahlık kavuşmaya değmişti.">
     <div class="photo-img-container">
-        <img src="2025-1.jpeg" alt="Barış Sabahı" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-1.jpeg" alt="Barış Sabahı" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2238,7 +2274,7 @@ footer i {
      data-desc="Barıştıktan sonra, birtanecik sevgilim, küçük kızımın ilk doğum günüydü. O kadar çok heyecanlıydım ki... Sana benzeyen kelebekli pasta almıştım. O gün arkadaşlarımız da gelmişti, çok mutlu bir şekilde evimizde kutlamıştık. Senin yüzündeki mutluluk, pastadaki kelebeklerden daha renkliydi. Küçük ailemizin yeniden bir araya gelişinin, ilk büyük kutlamasıydı. Her şey mükemmeldi: pastanın tadı, arkadaşların kahkahaları, senin gülüşün... Ve en önemlisi, hep birlikte olmamız." 
      data-quote="Kelebekli pasta geçiciydi, senin gülüşün kalıcıydı.">
     <div class="photo-img-container">
-        <img src="2025-2.jpeg" alt="Küçük Kızımın İlk Doğum Günü" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-2.jpeg" alt="Küçük Kızımın İlk Doğum Günü" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2253,7 +2289,7 @@ footer i {
      data-desc="Hayatımda ilk bıyık uzattığım zamandı. Sen de o kadar milftin ki... Fotoğrafta zaten ben bıyığın etkisiyle çok kaba duruyordum, sen de duruşun, sexiliğin başımı döndürmüştü. O kontrast mükemmeldi: benim sakar, bıyıklı hâlim ve senin zarif, seksi duruşun. Bıyık belki komikti, ama senin yanımda olman o kadar güzeldi ki hiç önemi yoktu. O fotoğrafa baktıkça, o günkü halimize gülümsüyorum. Belki bıyık yakışmamıştı bana, ama sen her hâlinle bana yakışıyordun." 
      data-quote="Bıyık komikti belki, ama senin seksi duruşun her şeye değerdi.">
     <div class="photo-img-container">
-        <img src="2025-3.jpeg" alt="BIYIK" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-3.jpeg" alt="BIYIK" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2268,7 +2304,7 @@ footer i {
      data-desc="Köpeğimiz Latte'nin 3. yaş doğum günüydü. O gün çok güzeldi. Ellerimizle pasta hazırlanıp süslenmiştik, çok güzel bir gündü. Evimizde baş başa, üçümüz kutlayıp çok eğlenmiştik. Latte'nin pastaya şaşkın bakışları, senin mutlu gülüşün, benim huzurum... Küçük ailemizin tam kadro kutlamasıydı. Ellerimizle hazırladığımız o basit pasta, dünyanın en lüks pastasından daha değerliydi çünkü sevgiyle yapılmıştı. Üçümüzün yeniden bir arada olduğu, küçük mutlulukların büyük anlam taşıdığı bir gündü." 
      data-quote="Üçümüz, bir pasta ve sonsuz mutluluk.">
     <div class="photo-img-container">
-        <img src="2025-4.jpeg" alt="Latte'nin 3. Yaş Günü" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-4.jpeg" alt="Latte'nin 3. Yaş Günü" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2283,7 +2319,7 @@ footer i {
      data-desc="Bu fotoğraf o kadar özel ki... Seninle ailenle beraber, hepimiz sofra kurup rakı içip şarkı söylediğimiz gündü. O masada sadece içki içmedik, bir aile olduk. Senin annenin yemekleri, şakalar, kahkahalar... Hepsi bir arada mükemmel bir tablo oluşturuyordu. O gece gerçekten sarhoştum, ama aşkından, mutluluğundan." 
      data-quote="Rakı biterdi, şarkılar susardı, ama aile olmanın sarhoşluğu hep kalırdı.">
     <div class="photo-img-container">
-        <img src="2025-5.jpeg" alt="Vur Kadehi Ustam" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-5.jpeg" alt="Vur Kadehi Ustam" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2298,7 +2334,7 @@ footer i {
      data-desc="O gün seninle şarap müzesine gitmiştik. Hem kültürlenip hem de bütün şaraplardan tatmıştık ve seninle o gün çok eğlenmiştim. Şarapların tarihini öğrenirken, kendi tarihimizi de yazıyor gibiydik." 
      data-quote="Şaraplar yıllandı, anılarımız da öyle... Hep daha değerlisi.">
     <div class="photo-img-container">
-        <img src="2025-6.jpeg" alt="Şarap Müzesi Keyfi" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-6.jpeg" alt="Şarap Müzesi Keyfi" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2313,7 +2349,7 @@ footer i {
      data-desc="Şarap müzesine varmadan, yolda gördüğümüz manzara alanında çekilmiştik. Yolculuğun yorgunluğunu unutturan, nefes kesici bir manzaraydı. Spontane anlar da en güzelleriydi." 
      data-quote="Yoldaki manzara geçiciydi, senin yanımda olman kalıcıydı.">
     <div class="photo-img-container">
-        <img src="2025-7.jpeg" alt="Manzaralı Yol Molası" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-7.jpeg" alt="Manzaralı Yol Molası" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2328,7 +2364,7 @@ footer i {
      data-desc="Bu fotoğraf 2025 yılının en ikonik karesi. Doğallığımız, mutluluğumuz ve samimiyetimiz bu karede donmuş kalmış." 
      data-quote="Rakı bitti, ama o karedeki mutluluk asla bitmeyecek.">
     <div class="photo-img-container">
-        <img src="2025-8.jpeg" alt="2025'in İkonik Karesi" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-8.jpeg" alt="2025'in İkonik Karesi" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2343,7 +2379,7 @@ footer i {
      data-desc="Bu fotoğrafta o kadar güzeliz ki... Giyinişimiz, duruşumuz ve bakışlarımız kusursuz bir uyum içinde." 
      data-quote="Giyinişimiz şıktı, ama aşkımız ondan da şıktı.">
     <div class="photo-img-container">
-        <img src="2025-9.jpeg" alt="Şıklığın Doruğu" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-9.jpeg" alt="Şıklığın Doruğu" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2358,7 +2394,7 @@ footer i {
      data-desc="Mavi duvar önünde, giyinişimiz ve duruşumuzla çekildiğimiz o uyumlu kareler. Biz sadece giyimde değil, her şeyde uyumluyduk." 
      data-quote="Mavi duvar sadece arka plandı, asıl uyum bizdeydi.">
     <div class="photo-img-container">
-        <img src="2025-10.jpeg" alt="Mavi Mavi" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-10.jpeg" alt="Mavi Mavi" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2373,7 +2409,7 @@ footer i {
      data-desc="Barıştıktan sonra sosyal medyada paylaştığımız ve herkesi şok eden o fotoğraf. Aşkımız herkese ilham olmuştu." 
      data-quote="Sosyal medya şok oldu, çünkü aşkımız herkese ilham oldu.">
     <div class="photo-img-container">
-        <img src="2025-11.jpeg" alt="Sosyal Medya Şoku" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-11.jpeg" alt="Sosyal Medya Şoku" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2388,7 +2424,7 @@ footer i {
      data-desc="Tekirdağ'da işe başladığım zamanlardı. Yorgundum ama senin yanında tüm yorgunluğum unutuluyordu. Seni sevmekten asla yorulmadım." 
      data-quote="Yorgundum, ama seni sevmek enerjimi hep tazeledi.">
     <div class="photo-img-container">
-        <img src="2025-12.jpeg" alt="Yorgun Aşkım" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-12.jpeg" alt="Yorgun Aşkım" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2404,7 +2440,7 @@ footer i {
      data-desc="Sushi alıp sushi geceleri yapıp beraber film izliyorduk. Saat kaç olursa olsun, gidip dışarda bulup alıp gelirdik. Çok güzel bir anımız. Gecenin geç saatlerinde bile sushi arayışımız, sonra eve dönüp film açmamız, sushi tabaklarını önümüze koyup keyif yapmamız... Hepsi o kadar özeldi ki. Filmlerin konusu bile önemli değildi, çünkü asıl izlediğimiz film değil, birlikte geçirdiğimiz zamandı. Sushinin tadı, filmin sesi, senin yanımda olman... Mükemmel üçlüydü. Ne zaman sushi yesem, o geceleri hatırlıyorum." 
      data-quote="Sushi soğuktu, ama aşkımız hep sıcaktı.">
     <div class="photo-img-container">
-        <img src="2025-13.jpeg" alt="Gece Sushi Keyfi" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-13.jpeg" alt="Gece Sushi Keyfi" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2419,7 +2455,7 @@ footer i {
      data-desc="Beraber evimizin balkonunda, sana ellerimle yemek yapıp rakımızı koyup içip birlikte bir şeyler izleyip, balkonda senin güzel gözlerini izlemek... Seninle aile gibi hissetmek, dünyanın en güzel hediyesi. O balkon, sadece beton ve demir değildi; bizim küçük cennetimizdi. Kendi yaptığım yemekler, senin hazırladığın mezeler, rakı bardaklarımız... Hepsi bir arada mükemmel bir aile tablosu oluşturuyordu. Balkondan şehri izlerken, aslında kendi dünyamızı izliyorduk. Senin gözlerindeki mutluluk, o akşamın en güzel manzarasıydı." 
      data-quote="Balkon betondu, ama aşkımız onu cennete çevirdi.">
     <div class="photo-img-container">
-        <img src="2025-14.jpeg" alt="Balkon Ailemiz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-14.jpeg" alt="Balkon Ailemiz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2434,7 +2470,7 @@ footer i {
      data-desc="Beraber barıştıktan sonraki ilk konserimizdi. Zeynep Bastık – en sevdiğimiz, dinlediğimiz şarkıcı – Tekirdağ'a gelmesi bizi o kadar mutlu etmişti ki. O gün seninle çok eğlenmiştik. Şarkılara eşlik edişimiz, dans edişimiz, birbirimize bakarkenki mutluluğumuz... Konserin enerjisi, aşkımızın enerjisiyle birleşmişti. Zeynep Bastık'ın her şarkısı, bizim hikayemizi anlatıyor gibiydi. Kalabalığın içinde sadece ikimiz vardık, müziğin ritminde kaybolmuştuk." 
      data-quote="Konserde Zeynep Bastık çaldı, kalplerimiz onun şarkılarıyla attı.">
     <div class="photo-img-container">
-        <img src="2025-15.jpeg" alt="Zeynep Bastık" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-15.jpeg" alt="Zeynep Bastık" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2449,7 +2485,7 @@ footer i {
      data-desc="29 Ekim Cumhuriyet Bayramı'nda seninle çok güzel giyinip arabada çekildiğimiz en karizmatik ve güzel fotoğrafımızdı. Senin saçlarının kıvırcıklığı ve kızıllığı... Sana baktıkça daha çok aşık olduğumu anlamıştım. O gün bayram coşkusu, senin güzelliğinle birleşmişti. Arabada çekilirkenki o doğal halimiz, giyimimizdeki şıklık, bakışlarımızdaki gurur... Hepsi bir arada mükemmeldi." 
      data-quote="Bayram şerefine giyindik, aşk şerefine bir ömür boyu sevdik.">
     <div class="photo-img-container">
-        <img src="2025-16.jpeg" alt="Cumhuriyet Bayramı" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-16.jpeg" alt="Cumhuriyet Bayramı" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2464,7 +2500,7 @@ footer i {
      data-desc="Çok yorulmuştum ve o gün işte tek başıma kalmıştım. Sen hemen koşup gelip bütün gün bana yardım edip benimle çalışmıştın. Geceye kadar o kadar mutlu olmuştum ki... Gerçekten de arkamda hep sen olup bana destek olacağını hissetmiştim. Sadece fiziksel olarak değil, duygusal olarak da yanımda olduğunu göstermiştin." 
      data-quote="Yoruldum ama yalnız değildim, çünkü sen hep yanımdaydın.">
     <div class="photo-img-container">
-        <img src="2025-17.jpeg" alt="Yorgunluğumda Yanımdaydın" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-17.jpeg" alt="Yorgunluğumda Yanımdaydın" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2479,7 +2515,7 @@ footer i {
      data-desc="Kafede otururken arkadaşlarımızla, gizli gizli sana kalpli pasta alıp tabağa 'Gökçeme' yazdırmıştım. Bir anda herkesin içinde elimde sana getirdiğimde o kadar çok utanmıştın ki... Yüzündeki kızarıklık, şaşkınlık ve gülüşün her şeye değerdi. Sana olan aşkımı herkese göstermiştim, çünkü sen her gösterişe değerdin." 
      data-quote="Pastada kalp vardı, senin yüzünde aşk vardı.">
     <div class="photo-img-container">
-        <img src="2025-18.jpeg" alt="Gizli Kalpli Pasta Sürprizi" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+        <img src="2025-18.jpeg" alt="Gizli Kalpli Pasta Sürprizi" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
         <div class="photo-img-overlay"></div>
     </div>
     <div class="photo-info">
@@ -2507,7 +2543,7 @@ footer i {
              data-desc="2026 yılına birlikte adım attığımız o ilk an... Henüz yeni başladık ama içimizde büyük bir heyecan, umut ve sevgi var. Bu yıl, geçmiş tüm yıllarımızın birikimiyle daha da güzel olacak. Beraber yaşayacağımız her anı, her gülüşü, her başarıyı sabırsızlıkla bekliyorum. SENİ ÇOK SEVİYORUM ÇÖÇİMMM! Bu fotoğraf, yeni hikayemizin ilk sayfası..." 
              data-quote="2026, bizim yılımız olacak. Beraber yazacağımız yeni hikayenin başlangıcı...">
             <div class="photo-img-container">
-                <img src="2026-1.jpeg" alt="2026'ya Girişimiz" class="photo-img" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
+                <img src="2026-1.jpeg" alt="2026'ya Girişimiz" class="photo-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'">
                 <div class="photo-img-overlay"></div>
             </div>
             <div class="photo-info">
@@ -2604,140 +2640,174 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNavBtn = document.getElementById('mobileNavBtn');
     const navLinksContainer = document.getElementById('navLinks');
     const closeNav = document.getElementById('closeNav');
+    const allImages = document.querySelectorAll('img');
     
-    // ================= KALP ANİMASYONU =================
-const heartsBackground = document.getElementById('heartsBackground');
-let letterOpened = false;
-
-// Kalp animasyonu fonksiyonu
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart-particle');
+    // ================= SAYFA YÜKLEME KONTROLÜ =================
+    let imagesLoaded = 0;
+    let totalImages = allImages.length;
+    let pageFullyLoaded = false;
     
-    // Rastgele renk seç
-    const colors = ['pink', 'purple', 'gold'];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    heart.classList.add(color);
-    
-    // Rastgele başlangıç pozisyonu
-    const startX = Math.random() * 100;
-    const startY = 100 + Math.random() * 20;
-    
-    // Rastgele boyut
-    const size = 10 + Math.random() * 20;
-    
-    // Rastgele animasyon süresi
-    const duration = 15 + Math.random() * 25;
-    
-    // Rastgele opaklık
-    const opacity = 0.2 + Math.random() * 0.3;
-    
-    // Stilleri uygula
-    heart.style.left = `${startX}%`;
-    heart.style.top = `${startY}%`;
-    heart.style.width = `${size}px`;
-    heart.style.height = `${size}px`;
-    heart.style.opacity = opacity;
-    heart.style.animation = `floatHeart ${duration}s linear infinite`;
-    
-    // Heart pseudo elementlerini de boyutlandır
-    heart.style.setProperty('--heart-size', `${size}px`);
-    
-    heartsBackground.appendChild(heart);
-    
-    // Animasyon bittiğinde kalbi kaldır
-    setTimeout(() => {
-        if (heart.parentNode === heartsBackground) {
-            heartsBackground.removeChild(heart);
-        }
-    }, duration * 1000 - 100);
-}
-
-// Kalp animasyonu için CSS animation tanımla
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes floatHeart {
-        0% {
-            transform: translateY(0) rotate(-45deg) scale(0.8);
-            opacity: 0;
-        }
-        10% {
-            opacity: 0.5;
-        }
-        90% {
-            opacity: 0.3;
-        }
-        100% {
-            transform: translateY(-100vh) rotate(-45deg) scale(1.2);
-            opacity: 0;
+    // Tüm resimlerin yüklenip yüklenmediğini kontrol et
+    function checkAllImagesLoaded() {
+        imagesLoaded++;
+        
+        // Tüm resimler yüklendiğinde veya 5 saniye geçtiğinde loading'i kapat
+        if (imagesLoaded >= totalImages || (Date.now() - startTime > 5000 && imagesLoaded > totalImages * 0.7)) {
+            if (!pageFullyLoaded) {
+                pageFullyLoaded = true;
+                showPageContent();
+            }
         }
     }
     
-    .heart-particle::before,
-    .heart-particle::after {
-        content: '';
-        position: absolute;
-        width: var(--heart-size, 20px);
-        height: var(--heart-size, 20px);
-        border-radius: 50%;
-    }
-    
-    .heart-particle::before {
-        top: calc(-1 * var(--heart-size, 20px) / 2);
-        left: 0;
-    }
-    
-    .heart-particle::after {
-        top: 0;
-        left: calc(var(--heart-size, 20px) / 2);
-    }
-    
-    .heart-particle {
-        transform: rotate(-45deg);
-        border-radius: 0 0 0 calc(var(--heart-size, 20px) / 2);
-    }
-`;
-document.head.appendChild(style);
-
-// Kalp oluşturma interval'i
-let heartInterval;
-
-function startHeartsAnimation() {
-    // İlk kalpleri oluştur
-    for (let i = 0; i < 15; i++) {
-        setTimeout(() => createHeart(), i * 300);
-    }
-    
-    // Belirli aralıklarla yeni kalpler oluştur
-    heartInterval = setInterval(() => {
-        if (document.visibilityState === 'visible') {
-            createHeart();
-        }
-    }, 800);
-}
-
-// ================= LOADING =================
-// Loading ekranını kaldır ve kalp animasyonunu başlat
-setTimeout(() => {
-    loading.classList.add('hidden');
-    // Hero animasyonlarını başlat
-    document.querySelector('.hero h1').style.animation = 'fadeUp 1s ease 0.3s forwards';
-    document.querySelector('.heart-divider').style.animation = 'fadeIn 1s ease 0.6s forwards';
-    document.querySelector('.hero p').style.animation = 'fadeUp 1s ease 0.9s forwards';
-    document.querySelector('.scroll-indicator').style.animation = 'fadeIn 1s ease 1.2s forwards';
-    
-    // Kalp animasyonunu başlat
-    startHeartsAnimation();
-}, 1500);
-
-// Sayfa görünürlüğü değiştiğinde animasyonu kontrol et
-document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'hidden') {
-        clearInterval(heartInterval);
-    } else if (document.visibilityState === 'visible') {
+    // Sayfa içeriğini göster
+    function showPageContent() {
+        loading.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        
+        // Hero animasyonlarını başlat
+        document.querySelector('.hero h1').style.animation = 'fadeUp 1s ease 0.3s forwards';
+        document.querySelector('.heart-divider').style.animation = 'fadeIn 1s ease 0.6s forwards';
+        document.querySelector('.hero p').style.animation = 'fadeUp 1s ease 0.9s forwards';
+        document.querySelector('.scroll-indicator').style.animation = 'fadeIn 1s ease 1.2s forwards';
+        
+        // Kalp animasyonunu başlat
         startHeartsAnimation();
     }
-});
+    
+    // Resim yükleme event'leri
+    allImages.forEach(img => {
+        if (img.complete) {
+            checkAllImagesLoaded();
+        } else {
+            img.addEventListener('load', checkAllImagesLoaded);
+            img.addEventListener('error', checkAllImagesLoaded); // Hata durumunda da saymayı sürdür
+        }
+    });
+    
+    // Fontların yüklenmesini bekle
+    document.fonts.ready.then(() => {
+        checkAllImagesLoaded();
+    });
+    
+    // Maksimum 8 saniye sonra loading'i kapat (güvenlik önlemi)
+    const startTime = Date.now();
+    setTimeout(() => {
+        if (!pageFullyLoaded) {
+            pageFullyLoaded = true;
+            showPageContent();
+        }
+    }, 8000);
+    
+    // ================= KALP ANİMASYONU =================
+    const heartsBackground = document.getElementById('heartsBackground');
+    let letterOpened = false;
+    let heartInterval;
+
+    // Kalp animasyonu fonksiyonu
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-particle');
+        
+        // Rastgele renk seç
+        const colors = ['pink', 'purple', 'gold'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        heart.classList.add(color);
+        
+        // Rastgele başlangıç pozisyonu
+        const startX = Math.random() * 100;
+        const startY = 100 + Math.random() * 20;
+        
+        // Rastgele boyut
+        const size = 10 + Math.random() * 20;
+        
+        // Rastgele animasyon süresi
+        const duration = 15 + Math.random() * 25;
+        
+        // Rastgele opaklık
+        const opacity = 0.2 + Math.random() * 0.3;
+        
+        // Stilleri uygula
+        heart.style.left = `${startX}%`;
+        heart.style.top = `${startY}%`;
+        heart.style.width = `${size}px`;
+        heart.style.height = `${size}px`;
+        heart.style.opacity = opacity;
+        heart.style.animation = `floatHeart ${duration}s linear infinite`;
+        
+        // Heart pseudo elementlerini de boyutlandır
+        heart.style.setProperty('--heart-size', `${size}px`);
+        
+        heartsBackground.appendChild(heart);
+        
+        // Animasyon bittiğinde kalbi kaldır
+        setTimeout(() => {
+            if (heart.parentNode === heartsBackground) {
+                heartsBackground.removeChild(heart);
+            }
+        }, duration * 1000 - 100);
+    }
+
+    // Kalp animasyonu için CSS animation tanımla
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(-45deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(-45deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+        
+        .heart-particle::before,
+        .heart-particle::after {
+            content: '';
+            position: absolute;
+            width: var(--heart-size, 20px);
+            height: var(--heart-size, 20px);
+            border-radius: 50%;
+        }
+        
+        .heart-particle::before {
+            top: calc(-1 * var(--heart-size, 20px) / 2);
+            left: 0;
+        }
+        
+        .heart-particle::after {
+            top: 0;
+            left: calc(var(--heart-size, 20px) / 2);
+        }
+        
+        .heart-particle {
+            transform: rotate(-45deg);
+            border-radius: 0 0 0 calc(var(--heart-size, 20px) / 2);
+        }
+    `;
+    document.head.appendChild(style);
+
+    function startHeartsAnimation() {
+        // İlk kalpleri oluştur
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => createHeart(), i * 300);
+        }
+        
+        // Belirli aralıklarla yeni kalpler oluştur (mobilde daha az)
+        const isMobile = window.innerWidth <= 768;
+        heartInterval = setInterval(() => {
+            if (document.visibilityState === 'visible') {
+                createHeart();
+            }
+        }, isMobile ? 1200 : 800);
+    }
     
     // ================= MODAL İŞLEMLERİ =================
     // Fotoğraf kartlarına tıklama
@@ -2909,11 +2979,13 @@ document.addEventListener('visibilitychange', function() {
                 '2022': 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
                 '2023': 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
                 '2024': 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-                '2025': 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                '2025': 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                '2026': 'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
             };
             
             this.src = defaultImages[yearId] || defaultImages['2021'];
             this.alt = 'Fotoğraf yüklenemedi';
+            checkAllImagesLoaded(); // Varsayılan resim yüklendiğinde de say
         });
     });
     
@@ -2951,9 +3023,24 @@ document.addEventListener('visibilitychange', function() {
         });
     });
     
+    // Sayfa görünürlüğü değiştiğinde animasyonu kontrol et
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden') {
+            clearInterval(heartInterval);
+        } else if (document.visibilityState === 'visible') {
+            startHeartsAnimation();
+        }
+    });
+    
+    // Pencere boyutu değiştiğinde kalp animasyonunu ayarla
+    window.addEventListener('resize', function() {
+        clearInterval(heartInterval);
+        startHeartsAnimation();
+    });
+    
     // Sayfa yüklendiğinde ilk bölümü aktif et
     setTimeout(() => {
-        if (yearSections[0]) {
+        if (yearSections[0] && pageFullyLoaded) {
             yearSections[0].classList.add('active');
             const cards = yearSections[0].querySelectorAll('.photo-card');
             cards.forEach((card, index) => {
@@ -2962,7 +3049,7 @@ document.addEventListener('visibilitychange', function() {
                 }, index * 150);
             });
         }
-    }, 1000);
+    }, 1200);
 });
 </script>
 
