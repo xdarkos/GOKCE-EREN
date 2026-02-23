@@ -1740,9 +1740,334 @@ footer i {
     }
 }
 
+/* ================= MOBİL MODAL DÜZELTMELERİ ================= */
+@media (max-width: 768px) {
+    .image-modal.active {
+        display: flex !important;
+        align-items: flex-start !important;
+        padding: 10px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .image-modal .modal-content {
+        margin: 20px auto !important;
+        width: 98% !important;
+        max-height: 96vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .image-modal .modal-header {
+        padding: 15px 20px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .image-modal .modal-header h3 {
+        font-size: 22px !important;
+    }
+    
+    .image-modal .modal-body {
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .image-modal .modal-image-container {
+        flex: 0 0 auto !important;
+        padding: 20px !important;
+        min-height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .image-modal .modal-image {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 60vh !important;
+        object-fit: contain !important;
+    }
+    
+    .image-modal .modal-info {
+        width: 100% !important;
+        padding: 25px !important;
+        border-left: none !important;
+        border-top: 1px solid #eee !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .image-modal .modal-title {
+        font-size: 24px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .image-modal .modal-date {
+        font-size: 16px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .image-modal .modal-desc {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .image-modal .modal-quote {
+        font-size: 18px !important;
+        padding: 20px !important;
+    }
+    
+    /* Kapatma butonunun daha kolay tıklanması için */
+    .image-modal .close-modal {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 32px !important;
+    }
+}
+
+/* Çok küçük ekranlar için (480px altı) ek düzenlemeler */
+@media (max-width: 480px) {
+    .image-modal .modal-content {
+        width: 100% !important;
+        margin: 10px !important;
+        border-radius: 20px !important;
+    }
+    
+    .image-modal .modal-header {
+        padding: 12px 18px !important;
+    }
+    
+    .image-modal .modal-header h3 {
+        font-size: 20px !important;
+    }
+    
+    .image-modal .modal-image-container {
+        padding: 15px !important;
+    }
+    
+    .image-modal .modal-info {
+        padding: 20px !important;
+    }
+    
+    .image-modal .modal-title {
+        font-size: 22px !important;
+    }
+    
+    .image-modal .modal-desc {
+        font-size: 15px !important;
+    }
+    
+    .image-modal .modal-quote {
+        font-size: 17px !important;
+        padding: 15px !important;
+    }
+}
+
+/* Masaüstünde modal boyutunu optimize et */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .image-modal .modal-content {
+        max-width: 95% !important;
+    }
+    
+    .image-modal .modal-body {
+        flex-direction: row !important;
+    }
+    
+    .image-modal .modal-info {
+        width: 350px !important;
+    }
+}
+/* ================= MOBİL MODAL SORUN ÇÖZÜMLERİ (EN SONA EKLEYİN) ================= */
+@media (max-width: 768px) {
+    .image-modal.active {
+        display: flex !important;
+        align-items: center !important; /* Ortalamak için flex-start yerine center */
+        padding: 0 !important; /* İç boşluğu sıfırla */
+        background: rgba(0, 0, 0, 0.95) !important; /* Arka planı biraz daha koyulaştır */
+        overflow: hidden !important; /* Modalın kendisinde kaydırma olmasın */
+    }
+    
+    .image-modal .modal-content {
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important; /* Yüksekliği tam ekran yap */
+        max-width: 100% !important;
+        max-height: 100% !important;
+        border-radius: 0 !important; /* Köşe yuvarlatmayı kaldır */
+        display: flex !important;
+        flex-direction: column !important;
+        background: white !important;
+        transform: scale(1) !important; /* Yakınlaşma efektini kaldır */
+        box-shadow: none !important;
+    }
+    
+    .image-modal .modal-header {
+        padding: 15px 20px !important;
+        flex-shrink: 0 !important;
+        background: var(--gradient) !important; /* Gradient arka planı koru */
+        border-radius: 0 !important;
+        min-height: 70px; /* Yüksekliği biraz artır */
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .image-modal .modal-header h3 {
+        font-size: 24px !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .image-modal .close-modal {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 32px !important;
+        background: rgba(255, 255, 255, 0.3) !important; /* Butonu daha belirgin yap */
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: white !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important; /* Hafif bir çerçeve ekle */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important; /* Hafif gölge */
+        z-index: 10 !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .image-modal .close-modal:active {
+        transform: scale(0.9) !important; /* Tıklanınca küçülme efekti */
+        background: rgba(255, 255, 255, 0.5) !important;
+    }
+    
+    .image-modal .modal-body {
+        flex: 1 1 auto !important;
+        overflow-y: auto !important; /* Kaydırma burada olacak */
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+    }
+    
+    .image-modal .modal-image-container {
+        flex: 0 0 auto !important; /* İçeriğe göre boyutlan */
+        padding: 25px !important;
+        background: #f5f5f5 !important; /* Açık gri bir arka plan */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-bottom: 1px solid #eee !important;
+    }
+    
+    .image-modal .modal-image {
+        width: auto !important;
+        height: auto !important;
+        max-width: 100% !important;
+        max-height: 50vh !important; /* Görsel yüksekliğini sınırla */
+        object-fit: contain !important;
+        border-radius: 15px !important; /* Hafif yuvarlat */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+    }
+    
+    .image-modal .modal-info {
+        width: 100% !important;
+        padding: 30px !important;
+        border-left: none !important;
+        border-top: none !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        flex-shrink: 0 !important;
+        background: white !important;
+    }
+    
+    .image-modal .modal-title {
+        font-size: 28px !important;
+        margin-bottom: 15px !important;
+        color: var(--dark) !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .image-modal .modal-date {
+        font-size: 18px !important;
+        margin-bottom: 25px !important;
+        padding-bottom: 15px !important;
+        border-bottom: 2px dashed var(--primary-light) !important; /* Ayırıcı çizgi */
+    }
+    
+    .image-modal .modal-desc {
+        font-size: 18px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 30px !important;
+        color: #444 !important;
+    }
+    
+    .image-modal .modal-quote {
+        font-size: 22px !important;
+        padding: 25px !important;
+        background: var(--gradient-light) !important;
+        border-radius: 20px !important;
+        border-left: 5px solid var(--primary) !important;
+        margin-top: 10px !important;
+        font-family: 'Caveat', cursive !important;
+        color: var(--dark) !important;
+    }
+}
+
+/* Çok küçük ekranlar için (480px altı) ek düzenlemeler */
+@media (max-width: 480px) {
+    .image-modal .modal-header {
+        padding: 12px 18px !important;
+        min-height: 65px;
+    }
+    
+    .image-modal .modal-header h3 {
+        font-size: 22px !important;
+    }
+    
+    .image-modal .close-modal {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 28px !important;
+    }
+    
+    .image-modal .modal-image-container {
+        padding: 20px !important;
+    }
+    
+    .image-modal .modal-image {
+        max-height: 45vh !important;
+    }
+    
+    .image-modal .modal-info {
+        padding: 25px !important;
+    }
+    
+    .image-modal .modal-title {
+        font-size: 24px !important;
+    }
+    
+    .image-modal .modal-date {
+        font-size: 16px !important;
+    }
+    
+    .image-modal .modal-desc {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+    
+    .image-modal .modal-quote {
+        font-size: 20px !important;
+        padding: 20px !important;
+    }
+}
 </style>
 </head>
 <body>
+
 
 <!-- LOADING SCREEN -->
 <div class="loading" id="loading">
@@ -3543,6 +3868,82 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }, 1000);
+});
+
+// ================= MOBİL MODAL DOKUNMA/KAPATMA DÜZELTMELERİ (EN SONA EKLEYİN) =================
+document.addEventListener('DOMContentLoaded', function() {
+    // Modal elementlerini tekrar seç (sayfada varsa)
+    const imageModal = document.getElementById('imageModal');
+    const closeModal = document.getElementById('closeModal');
+    
+    if (imageModal && closeModal) {
+        // Kapatma butonuna özel tıklama olayı
+        closeModal.addEventListener('click', function(e) {
+            e.preventDefault();  // Varsayılan davranışı engelle
+            e.stopPropagation(); // Olayın yayılmasını durdur
+            
+            imageModal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            console.log('Modal kapatıldı'); // Test için
+        });
+
+        // Mobilde modal dışına tıklayınca kapatma (arka plan)
+        imageModal.addEventListener('click', function(e) {
+            // Tıklanan element doğrudan modalın arka planı (içerik değil) ise kapat
+            if (e.target === imageModal) {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ESC tuşu ile kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    
+    // Fotoğraf kartlarına tıklama olayını güçlendir
+    document.querySelectorAll('.photo-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Eğer tıklanan element fotoğraf kartının içindeki bir link veya buton değilse
+            if (!e.target.closest('a') && !e.target.closest('button')) {
+                const title = this.getAttribute('data-title') || this.querySelector('.photo-title')?.textContent || 'Anı';
+                const dateElem = this.querySelector('.photo-date');
+                const date = dateElem ? dateElem.textContent : 'Tarih Yok';
+                const desc = this.getAttribute('data-desc') || this.querySelector('.photo-desc')?.textContent || 'Açıklama Yok';
+                const quote = this.getAttribute('data-quote') || "Bu anı her zaman hatırlayacağız...";
+                const imgSrc = this.querySelector('.photo-img')?.getAttribute('src') || '';
+                
+                // Modal elementlerini doldur
+                const modalTitle = document.getElementById('modalTitle');
+                const modalCardTitle = document.getElementById('modalCardTitle');
+                const modalDate = document.getElementById('modalDate');
+                const modalDesc = document.getElementById('modalDesc');
+                const modalQuote = document.getElementById('modalQuote');
+                const modalImage = document.getElementById('modalImage');
+                
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalCardTitle) modalCardTitle.textContent = title;
+                if (modalDate) modalDate.innerHTML = `<i class="far fa-calendar-alt"></i> ${date}`;
+                if (modalDesc) modalDesc.textContent = desc;
+                if (modalQuote) modalQuote.textContent = `"${quote}"`;
+                if (modalImage) {
+                    modalImage.setAttribute('src', imgSrc);
+                    modalImage.setAttribute('alt', title);
+                }
+                
+                // Modalı göster
+                if (imageModal) {
+                    imageModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        });
+    });
 });
 </script>
 
